@@ -10,21 +10,25 @@ export const Navbar = () => {
 
 				<div className="navbar-collapse">
 					<div className="navbar-nav">
-						<NavLink className="nav-item nav-link" to="/marvel">
+						<NavLink className={({isActive}) => `nav-item nav-link ${isActive ? 'active' : ''}`} to="/marvel">
 							Marvel
 						</NavLink>
 
-						<NavLink className="nav-item nav-link" to="/dc">
+						<NavLink className={({isActive}) => `nav-item nav-link ${isActive ? 'active' : ''}`} to="/dc">
 							DC
 						</NavLink>
 					</div>
 				</div>
 
-				<div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+				<div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
 					<ul className="navbar-nav ml-auto">
-						<NavLink className="nav-item nav-link" to="/login">
+						<span className="nav-item nav-link text-info">
+							Alejandro Lizarraga
+						</span>
+
+						<button className="nav-item nav-link btn">
 							Logout
-						</NavLink>
+						</button>
 					</ul>
 				</div>
 			</div>
