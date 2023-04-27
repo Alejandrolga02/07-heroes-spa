@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 
+import { HeroCard } from "./";
 import { getHeroesByPublisher } from "../helpers";
 
 export const HeroList = ({ publisher }) => {
@@ -7,13 +8,11 @@ export const HeroList = ({ publisher }) => {
 	const heroes = getHeroesByPublisher(publisher);
 
 	return (
-		<>
-			<ul>
-			{heroes.map((heroe) => {
-				return <li key={heroe.id} >{heroe.superhero}</li>
+		<div className="row rows-cols-1 row-cols-md-3 g-3">
+			{heroes.map((hero) => {
+				return <HeroCard key={hero.id} {...hero} />
 			})}
-			</ul>
-		</>
+		</div>
 	);
 };
 HeroList.propTypes = {
