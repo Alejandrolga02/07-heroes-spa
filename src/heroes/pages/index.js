@@ -1,2 +1,2 @@
-export * from './DC';
-export * from './Marvel';
+export * from './DcPage';
+export * from './MarvelPage';
