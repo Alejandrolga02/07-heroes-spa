@@ -10,7 +10,7 @@ export const PublicRoute = ({ children }) => {
 
 	return (!isLogged)
 		? children
-		: <Navigate to="/" />
+		: <Navigate to="/marvel" />
 };
 
 PublicRoute.propTypes = {

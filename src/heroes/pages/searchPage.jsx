@@ -11,7 +11,7 @@ export const SearchPage = () => {
 	const { q = "" } = queryString.parse(location.search);
 	const heroes = getHeroByName(q);
 
-	const { searchText, onInputChange } = useForm({
+	const { searchText, onInputChange, onResetForm } = useForm({
 		searchText: q,
 	});
 
@@ -22,12 +22,6 @@ export const SearchPage = () => {
 
 		navigate(`?q=${searchText.toLowerCase().trim()}`);
 	};
-
-	const onResetForm = (event) => {
-		event.preventDefault();
-
-		window.location.href = window.location.origin + window.location.pathname;
-	}
 
 	return (
 		<>

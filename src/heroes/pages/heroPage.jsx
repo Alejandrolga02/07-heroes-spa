@@ -6,7 +6,7 @@ export const HeroPage = () => {
 	const {id} = useParams();
 	const hero = useMemo(() => getHeroById(id), [id]);
 	const navigate = useNavigate();
-
+	
 	const onNavigateBack = () => {
 		navigate(-1);
 	}
